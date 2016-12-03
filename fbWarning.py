@@ -1,14 +1,14 @@
+#!python3
 """
 # This is just another lazy project
 # The goal of this project is to keep a track of warned users in a Facebook Group
 # Usage: Copy profile link> 'Yes' | 'No' > Sync!
 """
-#!python3
 
 import re
 import pyperclip
 
-pattern = re.compile(r"(?:(?:http|https):\/\/)?(?:web.)?facebook.com\/.+\?+(ref)+=(nf|ufi)")
+pattern = re.compile(r"(http|https):\/\/?(?:web.)?facebook.com\/.+\?+(fref)+=(nf|ufi)")
 
 pr_data = str()
 
@@ -37,5 +37,4 @@ while True:
             print("Unique ID found, Adding to file.")
             data_entry("file.txt", pr_data)
         else:
-            print("No FB ID Found")
             continue
